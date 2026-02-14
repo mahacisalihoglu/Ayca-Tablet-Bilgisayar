@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ayca'yı Çok Sevme Sayfası</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Quicksand:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(165deg, #ffe4ec 0%, #ffd1dc 25%, #ffb6c1 50%, #ffc0cb 75%, #ffe4e9 100%);
+      min-height: 100vh;
+      color: #5c3d4a;
+      overflow-x: hidden;
+    }
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+      text-align: center;
+      animation: fadeIn 1.2s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 6vw, 3.5rem);
+      font-weight: 600;
+      color: #8b4a5a;
+      margin-bottom: 1.25rem;
+      text-shadow: 0 2px 20px rgba(139, 74, 90, 0.15);
+      animation: slideDown 1s ease-out 0.2s both;
+    }
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .subtitle {
+      font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+      max-width: 480px;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+      opacity: 0.9;
+      animation: slideDown 1s ease-out 0.4s both;
+    }
+    .photo-frame {
+      width: min(280px, 85vw);
+      height: min(280px, 85vw);
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(139, 74, 90, 0.25), 0 4px 15px rgba(0,0,0,0.08);
+      margin-bottom: 2.5rem;
+      animation: scaleIn 1s ease-out 0.6s both;
+    }
+    @keyframes scaleIn {
+      from { opacity: 0; transform: scale(0.85); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      animation: slideUp 1s ease-out 0.8s both;
+    }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(10px);
+      padding: 1.25rem 1.75rem;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(139, 74, 90, 0.12);
+      font-weight: 500;
+      color: #6b4452;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 40px rgba(139, 74, 90, 0.2);
+    }
+    .scroll-hint {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      opacity: 0.7;
+      animation: bounce 2s ease-in-out infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(8px); }
+    }
+    .section-two {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 1.5rem;
+      text-align: center;
+      background: linear-gradient(180deg, transparent 0%, rgba(255, 228, 236, 0.6) 30%, rgba(255, 182, 193, 0.4) 100%);
+    }
+    .section-two h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.5rem, 4vw, 2.25rem);
+      font-weight: 600;
+      color: #8b4a5a;
+      margin-bottom: 1rem;
+    }
+    .section-two .romantic-line {
+      font-size: clamp(0.95rem, 2.2vw, 1.1rem);
+      max-width: 420px;
+      line-height: 1.75;
+      margin-bottom: 2rem;
+      font-style: italic;
+      opacity: 0.95;
+    }
+    .childhood-frame {
+      width: min(240px, 75vw);
+      height: min(240px, 75vw);
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(139, 74, 90, 0.25), 0 4px 15px rgba(0,0,0,0.08);
+    }
+    .childhood-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <h1>Ayca'yı Çok Seviyorum</h1>
+    <p class="subtitle">Her gün seni düşünmek, her an seninle olmak isteği… Bu sayfa, kalbimdeki yerin küçük bir yansıması.</p>
+    <div class="photo-frame">
+        <img src="ayca.jpg">
+    </div>
+    <div class="cards">
+      <div class="card">Gülüşü</div>
+      <div class="card">Kalbi</div>
+      <div class="card">Hayalleri</div>
+    </div>
+    <p class="scroll-hint">↓ Aşağı kaydır</p>
+  </section>
+
+  <section class="section-two" id="created">
+    <h2>Created by Ayca Tablet Bilgisayar</h2>
+    <p class="romantic-line">Bir zamanlar küçük bir hayaldi, bir gün birlikte gerçeğe dönüşecek.</p>
+    <div class="childhood-frame">
+        <img src="ayca_çocukluk.jpg">
+    </div>
+  </section>
+</body>
+</html>
